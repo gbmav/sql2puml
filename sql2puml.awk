@@ -1,6 +1,6 @@
 # =========================================================================
 #
-# ddl2m - SQL DDL to markdown converter
+# sql2puml - SQL DDL to markdown converter
 #
 # Invocation/Execution:
 #   awk -f sql2puml.awk inputfile > outputfile
