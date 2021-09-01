@@ -1,0 +1,81 @@
+@startuml
+left to right direction
+skinparam roundcorner 5
+skinparam linetype ortho
+skinparam shadowing false
+skinparam handwritten false
+skinparam class {
+ BackgroundColor white
+ ArrowColor #2688d4
+ BorderColor #2688d4
+}
+!define primary_key(x) <b><color:#b8861b><&key></color> x</b>
+!define foreign_key(x) <color:#aaaaaa><&key></color> x
+!define column(x) <color:#efefef><&media-record></color> x
+!define table(x) entity x << (T, white) >>
+table( table1_single_column ) { 
+column ( id ): INT
+}
+
+table( table2_single_column_multi_line_sql ) { 
+column ( id ): INT
+}
+
+table( table3_3_cols ) { 
+column ( id1 ): INT
+column ( firstname2 ): VARCHAR(100
+column ( lastname3 ): VARCHAR(100)
+}
+
+table( table4_3_cols_and_pk ) { 
+primary_key ( id ): INT
+column ( firstname ): VARCHAR(100
+column ( lastname ): VARCHAR(100)
+}
+
+table( table5_3_cols_pk_in_last_col ) { 
+column ( firstname ): VARCHAR(100
+column ( lastname ): VARCHAR(100)
+primary_key ( id ): INT
+}
+
+table( table11 ) { 
+column ( id ): INT
+column ( townname ): VARCHAR
+column ( county ): VARCHAR(100)
+}
+
+table( table10_pk_and_fk ) { 
+primary_key ( id ): INT
+column ( firstname ): VARCHAR(100
+column ( lastname ): VARCHAR(100)
+column ( town_id ): INT
+}
+ table10_pk_and_fk  }|--|| table11
+table( table14 ) { 
+column ( id ): INT
+column ( country ): VARCHAR
+}
+
+table( table13_fk ) { 
+column ( id ): INT
+column ( townname ): VARCHAR
+column ( county ): VARCHAR(100)
+column ( country_id ): INT
+}
+ table13_fk  }|--|| table14
+table( table12_fk ) { 
+primary_key ( id ): INT
+column ( firstname ): VARCHAR(100
+column ( lastname ): VARCHAR(100)
+column ( town_id ): INT
+}
+ table12_fk  }|--|| table13_fk
+table( table15_fk_to_missing_table ) { 
+primary_key ( id ): INT
+column ( first_name ): VARCHAR(100
+column ( last_name ): VARCHAR(100)
+column ( city_id ): INT
+}
+ table15_fk_to_missing_table  }|--|| city
+@enduml
