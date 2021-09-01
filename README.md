@@ -6,11 +6,13 @@ awk -f sql2puml.awk inputfile > outputfile
 
 # Example
 ## Example Input
+This is file **sql-test-vectors.sql**
 ```
 CREATE TABLE table4_3_cols_and_pk (id INT PRIMARY KEY, firstname VARCHAR(100), lastname VARCHAR(100) );
 ```
 
 ## Example Output
+This is file **sql-test-vectors.puml**
 ```
 left to right direction
 skinparam roundcorner 5
@@ -38,6 +40,12 @@ column ( lastname ): VARCHAR(100)
 
 ```
 ## Example PUML rendered
+This is file **sql-test-vectors.puml** but rendered and shown as an image
+
+
+![Example PUML](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/gbmav/sql2puml/master/sql-test-vectors.puml)
+
+
 ```puml
 @startuml
 left to right direction
