@@ -2,6 +2,7 @@
 Convert SQL DDL to Markdown in plantuml puml format
 
 # Invocation/Execution
+How to invoke the application
 ```
 awk -f sql2puml.awk inputfile > outputfile  
 ```
